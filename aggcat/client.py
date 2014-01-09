@@ -157,9 +157,6 @@ class AggcatClient(object):
                 self._refresh_client()
                 self._make_request(path, method, body, query, headers)
 
-        if response.status_code not in [200, 201, 401]:
-            raise HTTPError('Status Code: %s, Response %s' % (response.status_code, response.text,))
-
         if return_obj:
             try:
                 return AggCatResponse(
