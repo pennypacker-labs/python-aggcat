@@ -112,7 +112,7 @@ class AggcatClient(object):
         if r.status_code == 200:
             return urlparse.parse_qs(r.text)
         else:
-            raise HTTPError('A %s error occured retrieving token. Here is the error message %s' % (r.status_code, r.content.error_message))
+            raise HTTPError('A %s error occured retrieving token. Here is the error message %s' % (r.status_code, r.content))
 
     def _refresh_client(self):
         """If a token expires, refresh the client"""
